@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duty Management - Manpower Management Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 border-b z-50">
+        <div class="flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
+            <div class="flex items-center gap-2 md:gap-3">
+                <a href="../index.html"
+                    class="w-9 md:w-10 h-9 md:h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center hover:opacity-90 transition flex-shrink-0">
+                    <i class="fas fa-users text-white text-sm"></i>
+                </a>
+                <div>
+                    <h1 class="text-base md:text-xl font-bold">Manpower Docs</h1>
+                    <p class="text-xs text-slate-500">Duty Management</p>
+                </div>
+            </div>
+
+            <div class="hidden sm:flex flex-1 max-w-xs mx-4 lg:max-w-md lg:mx-8">
+                <div class="relative w-full">
+                    <input type="text" id="searchInput" placeholder="Search..."
+                        class="w-full px-3 md:px-4 py-2 bg-slate-100 border border-slate-200 rounded-lg text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
+                    <i
+                        class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 md:gap-4">
+                <a href="https://github.com" target="_blank" title="GitHub"
+                    class="text-slate-600 hover:text-slate-900 transition">
+                    <i class="fab fa-github text-lg"></i>
+                </a>
+                <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="sidebarToggleMobile" class="md:hidden text-slate-600 hover:text-slate-900 transition"
+                    title="Toggle menu">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex pt-16">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="fixed left-0 top-16 w-64 h-[calc(100vh-64px)] bg-white border-r border-slate-200 overflow-y-auto hidden md:block z-40">
+            <nav class="p-6 space-y-1">
+                <div class="mb-8">
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-home w-4"></i> Home
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Core Modules</h2>
+                    <ul class="space-y-1">
+                        <li><a href="settings.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-cog w-4"></i> Settings & Configuration
+                            </a></li>
+                        <li><a href="duty-management.html" class="nav-link active text-slate-900 hover:text-blue-600">
+                                <i class="fas fa-tasks w-4"></i> Duty Management
+                            </a></li>
+                        <li><a href="soldier-management.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-id-card w-4"></i> Soldier Management
+                            </a></li>
+                        <li><a href="absence-management.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-calendar-times w-4"></i> Absence Management
+                            </a></li>
+                        <li><a href="leave-management.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-calendar-check w-4"></i> Leave Management
+                            </a></li>
+                        <li><a href="training-module.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-graduation-cap w-4"></i> Training Module
+                            </a></li>
+                        <li><a href="appointment-management.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-briefcase w-4"></i> Appointment Management
+                            </a></li>
+                        <li><a href="reports-analytics.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-chart-bar w-4"></i> Reports & Analytics
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Advanced</h2>
+                    <ul class="space-y-1">
+                        <li><a href="duty-advanced.html" class="nav-link text-slate-600 hover:text-blue-600">
+                                <i class="fas fa-microchip w-4"></i> Duty Assignments (Advanced)
+                            </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 md:ml-64 w-full md:w-[calc(100%-16rem)]">
+            <div class="max-w-4xl mx-auto px-6 py-12">
+                <!-- Page Header -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-tasks text-indigo-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-4xl font-bold text-slate-900">Duty Management</h1>
+                            <p class="text-slate-600">Create and assign duties with flexibility and automation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overview -->
+                <section id="overview" class="mb-16">
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-8">
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">Module Overview</h2>
+                        <p class="text-slate-700 mb-4">
+                            Duty Management is the operational core of personnel scheduling. Create duties, assign
+                            soldiers efficiently using three methods (Fixed, Roster, Rank-based), and rely on automatic
+                            availability checking to prevent conflicts. The system manages duty status, supports bulk
+                            operations, and enables easy export functionality.
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="flex gap-3">
+                                <i class="fas fa-tasks text-indigo-600 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-900">3 Assignment Methods</p>
+                                    <p class="text-sm text-slate-600">Fixed, Roster, Rank Groups</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fas fa-check-circle text-indigo-600 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Automatic Checking</p>
+                                    <p class="text-sm text-slate-600">Real-time availability</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fas fa-bolt text-indigo-600 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Bulk Operations</p>
+                                    <p class="text-sm text-slate-600">Efficient mass management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Features -->
+                <section id="features" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Key Features</h2>
+
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-plus-circle text-indigo-600 text-2xl flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">1. Create and Manage Duties
+                                    </h3>
+                                    <p class="text-slate-600">Create new duties with detailed information, set dates and
+                                        times, define required soldier count, and manage duty status through lifecycle.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-users text-indigo-600 text-2xl flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">2. Assign Soldiers (3 Methods)
+                                    </h3>
+                                    <p class="text-slate-600"><strong>Fixed Assignment:</strong> Manually select
+                                        specific soldiers. <strong>Roster-based:</strong> Assign soldiers from
+                                        predefined rosters. <strong>Rank Groups:</strong> Automatically select from
+                                        specific rank groups.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-shield-alt text-indigo-600 text-2xl flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">3. Automatic Availability
+                                        Checking</h3>
+                                    <p class="text-slate-600">The system automatically checks if soldiers are available
+                                        based on leave, medical status, other duties, training, and appointments.
+                                        Prevents double-booking.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-circle text-indigo-600 text-2xl flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">4. Duty Status Management</h3>
+                                    <p class="text-slate-600">Manage duty lifecycle: Planned → Active → Completed. Track
+                                        status changes, modify duty details, and record completion information.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-clone text-indigo-600 text-2xl flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">5. Duplicate Duties</h3>
+                                    <p class="text-slate-600">Quickly create recurring duties by duplicating existing
+                                        ones. Modify the copy as needed to create similar duties efficiently.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-download text-indigo-600 text-2xl flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">6. Export Functionality</h3>
+                                    <p class="text-slate-600">Export duty information to standard formats for reporting,
+                                        planning, and integration with other systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Reference -->
+                <section id="quick-reference" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Assignment Methods Comparison</h2>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full bg-white rounded-xl border border-slate-200">
+                            <thead>
+                                <tr class="border-b border-slate-200">
+                                    <th class="px-6 py-4 text-left font-semibold text-slate-900">Method</th>
+                                    <th class="px-6 py-4 text-left font-semibold text-slate-900">Best For</th>
+                                    <th class="px-6 py-4 text-left font-semibold text-slate-900">How It Works</th>
+                                    <th class="px-6 py-4 text-left font-semibold text-slate-900">Time to Assign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Fixed Assignment</td>
+                                    <td class="px-6 py-4 text-slate-600">Specific known soldiers</td>
+                                    <td class="px-6 py-4 text-slate-600">Manually select soldiers one by one</td>
+                                    <td class="px-6 py-4 text-slate-600">Medium</td>
+                                </tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Roster-based</td>
+                                    <td class="px-6 py-4 text-slate-600">Predefined groups</td>
+                                    <td class="px-6 py-4 text-slate-600">Select from existing rosters</td>
+                                    <td class="px-6 py-4 text-slate-600">Fast</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Rank Groups</td>
+                                    <td class="px-6 py-4 text-slate-600">Role-based assignments</td>
+                                    <td class="px-6 py-4 text-slate-600">Auto-select by rank/role</td>
+                                    <td class="px-6 py-4 text-slate-600">Fastest</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Common Workflow -->
+                <section id="workflow" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Typical Duty Creation Workflow</h2>
+
+                    <div class="bg-white border border-slate-200 rounded-xl p-8">
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    1</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Navigate to Duty Management</p>
+                                    <p class="text-sm text-slate-600">Click Duty Management in the main menu</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    2</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Click "Create New Duty"</p>
+                                    <p class="text-sm text-slate-600">Fill in duty details: name, date, time, location,
+                                        required count</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    3</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Choose Assignment Method</p>
+                                    <p class="text-sm text-slate-600">Select Fixed, Roster, or Rank Group based on your
+                                        needs</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    4</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Assign Soldiers</p>
+                                    <p class="text-sm text-slate-600">System auto-checks availability and shows
+                                        conflicts if any</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    5</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Review and Save</p>
+                                    <p class="text-sm text-slate-600">Verify all details and save the duty</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    6</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Monitor Status</p>
+                                    <p class="text-sm text-slate-600">Track duty from Planned → Active → Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Screenshot Placeholder -->
+                <section id="screenshots" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Visual Guide</h2>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Duty Creation Form]</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Duty Assignment Methods]</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Soldier Assignment & Availability]
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Duty Status Management]</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section id="faq" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
+
+                    <div class="space-y-4">
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                What happens if no soldiers are available?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">The system will show a warning. You can either reassign
+                                duties, find alternate soldiers, or manually override availability if needed (with
+                                supervisor approval).</p>
+                        </details>
+
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                Can I change assigned soldiers after creation?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">Yes, you can reassign soldiers as long as the duty is not
+                                marked as completed. Availability is rechecked during reassignment.</p>
+                        </details>
+
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                What does "rank group" assignment mean?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">It automatically assigns soldiers based on their rank. For
+                                example, selecting "Officer" assigns all available officers to the duty. This is useful
+                                for position-specific duties.</p>
+                        </details>
+
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                Can overnight duties be split across days?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">Yes, the system supports multi-day duties including overnight
+                                assignments. Availability is checked across all affected days.</p>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting -->
+                <section id="troubleshooting" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Troubleshooting</h2>
+
+                    <div class="space-y-6">
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded">
+                            <h3 class="font-semibold text-slate-900 mb-2">Soldiers showing as unavailable when they
+                                should be available</h3>
+                            <p class="text-slate-600">Check if soldiers have active leave, medical status, or other
+                                conflicting duties/training. Review their status and resolve conflicts before
+                                assignment.</p>
+                        </div>
+
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded">
+                            <h3 class="font-semibold text-slate-900 mb-2">Cannot create duty with no soldiers assigned
+                            </h3>
+                            <p class="text-slate-600">At least one soldier must be assigned to a duty. If no soldiers
+                                are available, resolve availability conflicts first or adjust duty requirements.</p>
+                        </div>
+
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded">
+                            <h3 class="font-semibold text-slate-900 mb-2">Rank group assignment not working</h3>
+                            <p class="text-slate-600">Ensure the selected rank exists in your system and there are
+                                active soldiers with that rank. Create soldiers with the required rank first.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation Footer -->
+                <footer class="border-t border-slate-200 pt-12 mt-16">
+                    <div class="flex justify-between items-center mb-8">
+                        <a href="settings.html"
+                            class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2">
+                            <i class="fas fa-arrow-left"></i> Previous: Settings
+                        </a>
+                        <a href="soldier-management.html"
+                            class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2">
+                            Next: Soldier Mgmt <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm text-slate-500">Last Updated: March 12, 2026</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

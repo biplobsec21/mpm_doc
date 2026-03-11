@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings & Configuration - Manpower Management Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 border-b z-50">
+        <div class="flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
+            <div class="flex items-center gap-2 md:gap-3">
+                <a href="../index.html"
+                    class="w-9 md:w-10 h-9 md:h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center hover:opacity-90 transition flex-shrink-0">
+                    <i class="fas fa-users text-white text-sm"></i>
+                </a>
+                <div>
+                    <h1 class="text-base md:text-xl font-bold">Manpower Docs</h1>
+                    <p class="text-xs text-slate-500">Settings</p>
+                </div>
+            </div>
+
+            <div class="hidden sm:flex flex-1 max-w-xs mx-4 lg:max-w-md lg:mx-8">
+                <div class="relative w-full">
+                    <input type="text" id="searchInput" placeholder="Search..."
+                        class="w-full px-3 md:px-4 py-2 bg-slate-100 border border-slate-200 rounded-lg text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
+                    <i
+                        class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 md:gap-4">
+                <a href="https://github.com" target="_blank" title="GitHub"
+                    class="text-slate-600 hover:text-slate-900 transition">
+                    <i class="fab fa-github text-lg"></i>
+                </a>
+                <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="sidebarToggleMobile" class="md:hidden text-slate-600 hover:text-slate-900 transition"
+                    title="Toggle menu">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex pt-16">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="fixed left-0 top-16 w-64 h-[calc(100vh-64px)] overflow-y-auto hidden md:block z-40">
+            <nav class="p-4 md:p-6 space-y-1">
+                <!-- Quick Links -->
+                <div class="mb-6">
+                    <ul class="space-y-1">
+                        <li><a href="../index.html" class="nav-link">
+                                <i class="fas fa-home w-4"></i> Home
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- Core Modules with Collapsible -->
+                <div class="nav-group">
+                    <div class="nav-group-title">
+                        <span>Core Modules</span>
+                        <span class="nav-group-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="nav-group-items">
+                        <div class="nav-group-items-inner">
+                            <input type="text" id="moduleSearch" placeholder="Filter..." class="mb-2">
+                            <div class="modules-no-results hidden">No modules found</div>
+                            <ul class="space-y-1">
+                                <li class="module-item"><a href="settings.html" class="nav-link active">
+                                        <i class="fas fa-cog w-4"></i> Settings
+                                    </a></li>
+                                <li class="module-item"><a href="duty-management.html" class="nav-link">
+                                        <i class="fas fa-tasks w-4"></i> Duty Management
+                                    </a></li>
+                                <li class="module-item"><a href="soldier-management.html" class="nav-link">
+                                        <i class="fas fa-id-card w-4"></i> Soldier Management
+                                    </a></li>
+                                <li class="module-item"><a href="absence-management.html" class="nav-link">
+                                        <i class="fas fa-calendar-times w-4"></i> Absence
+                                    </a></li>
+                                <li class="module-item"><a href="leave-management.html" class="nav-link">
+                                        <i class="fas fa-calendar-check w-4"></i> Leave
+                                    </a></li>
+                                <li class="module-item"><a href="training-module.html" class="nav-link">
+                                        <i class="fas fa-graduation-cap w-4"></i> Training
+                                    </a></li>
+                                <li class="module-item"><a href="appointment-management.html" class="nav-link">
+                                        <i class="fas fa-briefcase w-4"></i> Appointments
+                                    </a></li>
+                                <li class="module-item"><a href="reports-analytics.html" class="nav-link">
+                                        <i class="fas fa-chart-bar w-4"></i> Reports
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Section -->
+                <div class="nav-group">
+                    <div class="nav-group-title">
+                        <span>Advanced</span>
+                        <span class="nav-group-toggle collapsed">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="nav-group-items collapsed">
+                        <div class="nav-group-items-inner">
+                            <ul class="space-y-1">
+                                <li><a href="duty-advanced.html" class="nav-link">
+                                        <i class="fas fa-microchip w-4"></i> Duty Algorithm
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 md:ml-64 w-full md:w-[calc(100%-16rem)]">
+            <div class="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
+                <!-- Breadcrumb Navigation -->
+                <nav class="breadcrumb"></nav>
+
+                <!-- Page Header -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-cog text-blue-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-4xl font-bold text-slate-900">Settings & Configuration</h1>
+                            <p class="text-slate-600">System setup and organizational configuration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overview -->
+                <section id="overview" class="mb-16">
+                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-8">
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">Module Overview</h2>
+                        <p class="text-slate-700 mb-4">
+                            The Settings Page is the administrative hub where system administrators configure the entire
+                            Manpower Management System. This is where you define organizational structure, roles,
+                            permissions, and system parameters that affect all other modules.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="flex gap-3">
+                                <i class="fas fa-check text-green-600 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Configuration</p>
+                                    <p class="text-sm text-slate-600">Define all foundational system settings</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fas fa-check text-green-600 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-900">User Management</p>
+                                    <p class="text-sm text-slate-600">Create and manage user accounts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Features -->
+                <section id="features" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Key Features</h2>
+
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-user text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">1. Profile Settings</h3>
+                                    <p class="text-slate-600 mb-3">Configure organizational hierarchies and
+                                        classifications</p>
+                                    <ul class="text-sm text-slate-600 space-y-1 ml-4">
+                                        <li>• <strong>Ranks (RK):</strong> Define military rank structure</li>
+                                        <li>• <strong>Companies (Coy):</strong> Set up organizational units</li>
+                                        <li>• <strong>Skills:</strong> Define professional skills taxonomy</li>
+                                        <li>• <strong>Education:</strong> Create education level categories</li>
+                                        <li>And 10 more configuration options...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-tasks text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">2. Duty Settings</h3>
+                                    <p class="text-slate-600 mb-3">Configure duty and absence parameters</p>
+                                    <ul class="text-sm text-slate-600 space-y-1 ml-4">
+                                        <li>• <strong>Duties:</strong> Set up duty types and categories</li>
+                                        <li>• <strong>Leave Types:</strong> Create leave classifications</li>
+                                        <li>• <strong>Absence Types:</strong> Define absence categories</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-lock text-emerald-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">3. Role & Permissions</h3>
+                                    <p class="text-slate-600 mb-3">Control user access and authorization levels</p>
+                                    <ul class="text-sm text-slate-600 space-y-1 ml-4">
+                                        <li>• Create custom roles for different user types</li>
+                                        <li>• Assign module-level permissions</li>
+                                        <li>• Define action-level access controls</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-users text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-2">4. User Management</h3>
+                                    <p class="text-slate-600 mb-3">Create and manage system user accounts</p>
+                                    <ul class="text-sm text-slate-600 space-y-1 ml-4">
+                                        <li>• Create new user accounts</li>
+                                        <li>• Assign roles and permissions</li>
+                                        <li>• Manage user status and deactivation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Getting Started -->
+                <section id="getting-started" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Getting Started</h2>
+
+                    <div class="bg-white rounded-xl border border-slate-200 p-8">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-6">First-Time Setup Workflow</h3>
+
+                        <div class="space-y-4">
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    1</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Navigate to Settings</p>
+                                    <p class="text-sm text-slate-600">Click the Settings icon in the main menu</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    2</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Add Ranks</p>
+                                    <p class="text-sm text-slate-600">Go to Profile Settings → RK and create rank
+                                        structure</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    3</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Add Companies</p>
+                                    <p class="text-sm text-slate-600">Go to Profile Settings → Coy and create
+                                        organizational units</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    4</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Create Leave Types</p>
+                                    <p class="text-sm text-slate-600">Go to Duty Settings → Lve type and define leave
+                                        classifications</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                    5</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Create Users</p>
+                                    <p class="text-sm text-slate-600">Go to User Management and create administrator and
+                                        operator accounts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Reference -->
+                <section id="quick-reference" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Configuration Quick Reference</h2>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full bg-white rounded-xl border border-slate-200">
+                            <thead>
+                                <tr class="border-b border-slate-200">
+                                    <th class="px-6 py-3 text-left font-semibold text-slate-900">Configuration Item</th>
+                                    <th class="px-6 py-3 text-left font-semibold text-slate-900">Location</th>
+                                    <th class="px-6 py-3 text-left font-semibold text-slate-900">Purpose</th>
+                                    <th class="px-6 py-3 text-left font-semibold text-slate-900">Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Ranks</td>
+                                    <td class="px-6 py-4 text-slate-600">Profile Settings → RK</td>
+                                    <td class="px-6 py-4 text-slate-600">Military rank structure</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded">Yes</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Companies</td>
+                                    <td class="px-6 py-4 text-slate-600">Profile Settings → Coy</td>
+                                    <td class="px-6 py-4 text-slate-600">Organizational units</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded">Yes</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Leave Types</td>
+                                    <td class="px-6 py-4 text-slate-600">Duty Settings → Lve type</td>
+                                    <td class="px-6 py-4 text-slate-600">Leave classifications</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded">Yes</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Users</td>
+                                    <td class="px-6 py-4 text-slate-600">User Management</td>
+                                    <td class="px-6 py-4 text-slate-600">System accounts</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded">Yes</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Skills</td>
+                                    <td class="px-6 py-4 text-slate-600">Profile Settings → Skl</td>
+                                    <td class="px-6 py-4 text-slate-600">Professional skills</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded">No</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 font-semibold text-slate-900">Absence Types</td>
+                                    <td class="px-6 py-4 text-slate-600">Duty Settings → Abs type</td>
+                                    <td class="px-6 py-4 text-slate-600">Absence categories</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded">No</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Best Practices -->
+                <section id="best-practices" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Best Practices</h2>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+                            <h3 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                                <i class="fas fa-check text-green-600"></i> Do's
+                            </h3>
+                            <ul class="text-sm text-slate-700 space-y-2">
+                                <li>✓ Set up all mandatory configurations before adding users</li>
+                                <li>✓ Use clear, descriptive names for ranks and companies</li>
+                                <li>✓ Regularly review and update user permissions</li>
+                                <li>✓ Create roles based on job functions</li>
+                                <li>✓ Test configurations before going live</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+                            <h3 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                                <i class="fas fa-times text-red-600"></i> Don'ts
+                            </h3>
+                            <ul class="text-sm text-slate-700 space-y-2">
+                                <li>✗ Don't delete configurations that are already in use</li>
+                                <li>✗ Don't grant excessive permissions to users</li>
+                                <li>✗ Don't skip the initial setup process</li>
+                                <li>✗ Don't share admin credentials</li>
+                                <li>✗ Don't modify system settings without documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Screenshot Placeholder -->
+                <section id="screenshots" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Visual Guide</h2>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Settings Dashboard]</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: User Management Page]</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section id="faq" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
+
+                    <div class="space-y-4">
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                Can I modify configurations after creating user accounts?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">Yes, most configurations can be modified. However, ensure
+                                that changes don't break existing data relationships or user workflows. Always backup
+                                before making major changes.</p>
+                        </details>
+
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                How many ranks and companies can I create?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">There's no hard limit, but it's recommended to keep the
+                                structure manageable. Typically, 5-15 ranks and 2-10 companies work well for most
+                                organizations.</p>
+                        </details>
+
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                What happens if I delete a rank that soldiers have?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">The system will prevent deletion if the rank is in use. You
+                                must first reassign all soldiers with that rank to a different rank before deletion.</p>
+                        </details>
+
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                How do I recover deleted configurations?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">Deleted configurations cannot be recovered directly. Contact
+                                your system administrator for database recovery options or recreate the configurations
+                                with new entries.</p>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting -->
+                <section id="troubleshooting" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Troubleshooting</h2>
+
+                    <div class="space-y-6">
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded">
+                            <h3 class="font-semibold text-slate-900 mb-2">Cannot delete a configuration option</h3>
+                            <p class="text-slate-600">This means the configuration is tied to existing records. Check
+                                which entities are using it and update or delete those first. Contact the system
+                                administrator if needed.</p>
+                        </div>
+
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded">
+                            <h3 class="font-semibold text-slate-900 mb-2">Users cannot log in after configuration
+                                changes</h3>
+                            <p class="text-slate-600">Verify that the user's role still has appropriate permissions
+                                assigned. Check that no mandatory settings were removed that the user's workflow depends
+                                on.</p>
+                        </div>
+
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded">
+                            <h3 class="font-semibold text-slate-900 mb-2">Cannot create new soldiers after settings
+                                changes</h3>
+                            <p class="text-slate-600">Ensure all mandatory configuration items (ranks, companies) still
+                                exist. Check system logs for error messages. Verify your user has permission to modify
+                                soldier records.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation Footer -->
+                <footer class="border-t border-slate-200 pt-12 mt-16">
+                    <div class="flex justify-between items-center mb-8">
+                        <a href="../index.html"
+                            class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2">
+                            <i class="fas fa-arrow-left"></i> Back to Home
+                        </a>
+                        <a href="duty-management.html"
+                            class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2">
+                            Next: Duty Management <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm text-slate-500">Last Updated: March 12, 2026</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

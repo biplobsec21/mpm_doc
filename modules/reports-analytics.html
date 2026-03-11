@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics - Manpower Management Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-50">
+    <header class="fixed top-0 left-0 right-0 border-b z-50">
+        <div class="flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
+            <div class="flex items-center gap-2 md:gap-3 flex-shrink-0">
+                <a href="../index.html"
+                    class="w-9 md:w-10 h-9 md:h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-users text-white text-sm"></i>
+                </a>
+                <h1 class="text-base md:text-xl font-bold text-slate-900">Manpower Docs</h1>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search..."
+                class="hidden sm:flex flex-1 max-w-xs mx-4 lg:max-w-md lg:mx-8 px-4 py-2 bg-slate-100 border border-slate-200 rounded-lg text-sm">
+            <div class="flex items-center gap-2 md:gap-4">
+                <a href="https://github.com" target="_blank"
+                    class="text-slate-600 text-lg transition-colors hover:text-slate-900" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <button id="themeToggle" class="theme-toggle text-lg transition-colors hover:text-slate-900"
+                    title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex pt-16">
+        <aside id="sidebar"
+            class="fixed left-0 top-16 w-64 h-[calc(100vh-64px)] bg-white border-r border-slate-200 overflow-y-auto hidden md:block">
+            <nav class="p-6 space-y-6">
+                <div>
+                    <h2 class="text-xs font-semibold text-slate-500 uppercase mb-3">Core Modules</h2>
+                    <ul class="space-y-1">
+                        <li><a href="settings.html" class="nav-link"><i class="fas fa-cog w-4"></i> Settings</a></li>
+                        <li><a href="duty-management.html" class="nav-link"><i class="fas fa-tasks w-4"></i> Duty
+                                Mgmt</a></li>
+                        <li><a href="soldier-management.html" class="nav-link"><i class="fas fa-id-card w-4"></i>
+                                Soldier Mgmt</a></li>
+                        <li><a href="absence-management.html" class="nav-link"><i class="fas fa-calendar-times w-4"></i>
+                                Absence Mgmt</a></li>
+                        <li><a href="leave-management.html" class="nav-link"><i class="fas fa-calendar-check w-4"></i>
+                                Leave Mgmt</a></li>
+                        <li><a href="training-module.html" class="nav-link"><i class="fas fa-graduation-cap w-4"></i>
+                                Training</a></li>
+                        <li><a href="appointment-management.html" class="nav-link"><i class="fas fa-briefcase w-4"></i>
+                                Appointments</a></li>
+                        <li><a href="reports-analytics.html" class="nav-link active"><i
+                                    class="fas fa-chart-bar w-4"></i> Reports</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="flex-1 md:ml-64">
+            <div class="max-w-4xl mx-auto px-6 py-12">
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-indigo-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-4xl font-bold text-slate-900">Reports & Analytics</h1>
+                            <p class="text-slate-600">Comprehensive reporting and data analysis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="overview" class="mb-16">
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-8">
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">Module Overview</h2>
+                        <p class="text-slate-700">Reports & Analytics provide comprehensive insights into all system
+                            operations. Generate 12 standard reports, create custom reports, export data, and schedule
+                            automated reporting. Analyze duty assignments, attendance, leave utilization, and personnel
+                            metrics.</p>
+                    </div>
+                </section>
+
+                <section id="report-types" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">12 Report Types</h2>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i class="fas fa-tasks text-indigo-600"></i>
+                                Duty Report</h3>
+                            <p class="text-sm text-slate-600">Duty assignments, status, and soldier allocations</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-check-circle text-indigo-600"></i> Attendance Report</h3>
+                            <p class="text-sm text-slate-600">Soldier attendance and present/absent tracking</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-download text-indigo-600"></i> Soldier Export</h3>
+                            <p class="text-sm text-slate-600">Comprehensive soldier data export</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-chart-line text-indigo-600"></i> Manpower Analysis</h3>
+                            <p class="text-sm text-slate-600">Personnel strength and utilization analysis</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-calendar-check text-indigo-600"></i> Leave Utilization</h3>
+                            <p class="text-sm text-slate-600">Leave usage and trends analysis</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-graduation-cap text-indigo-600"></i> Training Report</h3>
+                            <p class="text-sm text-slate-600">Training completion and status</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-briefcase text-indigo-600"></i> Appointment Report</h3>
+                            <p class="text-sm text-slate-600">Current and historical appointments</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i class="fas fa-clock text-indigo-600"></i>
+                                Absence Report</h3>
+                            <p class="text-sm text-slate-600">Absence records and statistics</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i class="fas fa-users text-indigo-600"></i>
+                                Roster Report</h3>
+                            <p class="text-sm text-slate-600">Company and unit rosters</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i class="fas fa-medal text-indigo-600"></i>
+                                Rank Report</h3>
+                            <p class="text-sm text-slate-600">Personnel by rank distribution</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i class="fas fa-cube text-indigo-600"></i>
+                                Custom Reports</h3>
+                            <p class="text-sm text-slate-600">Build your own reports with filters</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-calendar text-indigo-600"></i> Scheduled Reports</h3>
+                            <p class="text-sm text-slate-600">Automated report generation and delivery</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="features" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Key Features</h2>
+
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i class="fas fa-filter text-indigo-600"></i>
+                                Advanced Filtering</h3>
+                            <p class="text-slate-600">Filter reports by date range, rank, company, status, and more.</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-download text-indigo-600"></i> Export Options</h3>
+                            <p class="text-slate-600">Export to CSV, Excel, PDF with formatting preserved.</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i
+                                    class="fas fa-chart-pie text-indigo-600"></i> Data Visualization</h3>
+                            <p class="text-slate-600">Charts, graphs, and interactive dashboards.</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                            <h3 class="font-semibold text-slate-900 mb-2"><i class="fas fa-clock text-indigo-600"></i>
+                                Scheduling</h3>
+                            <p class="text-slate-600">Schedule reports to run automatically and email results.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Screenshot Placeholder -->
+                <section id="screenshots" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Visual Guide</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Report Dashboard]</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Export Options]</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="border-t border-slate-200 pt-12 mt-16">
+                    <div class="flex justify-between items-center">
+                        <a href="appointment-management.html"
+                            class="text-blue-600 font-semibold flex items-center gap-2">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                        <a href="duty-advanced.html" class="text-blue-600 font-semibold flex items-center gap-2">
+                            Advanced Guide <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
