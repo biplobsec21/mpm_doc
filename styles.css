@@ -513,7 +513,7 @@ a {
 }
 
 a:not(.nav-link) {
-    color: #2563eb;
+    color: #002982;
 }
 
 a:not(.nav-link):hover {
