@@ -202,128 +202,129 @@
                                 <div
                                     class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
                                     3</div>
-                                <di>
+                                <div>
                                     <p class="font-semibold text-slate-900">Fill in Personal Information</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                4</div>
-                            <div>
-                                <p class="font-semibold text-slate-900">Assign Rank and Company</p>
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                                    4</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Assign Rank and Company</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                5</div>
-                            <div>
-                                <p class="font-semibold text-slate-900">Set Initial Status</p>
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                                    5</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Set Initial Status</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                6</div>
-                            <div>
-                                <p class="font-semibold text-slate-900">Save Soldier Profile</p>
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                                    6</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Save Soldier Profile</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
+
+                <!-- Screenshot Placeholder -->
+                <section id="screenshots" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Visual Guide</h2>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Soldier Profile Creation]</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Personal Information Form]</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Service History View]</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
+                            <div class="text-center">
+                                <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
+                                <p class="text-slate-600 font-semibold">[Screenshot: Soldier Export Report]</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="faq" class="mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">FAQ</h2>
+
+                    <div class="space-y-4">
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                Can I edit soldier information after creation?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">Yes, all soldier information can be edited except unique
+                                identifiers like ID numbers.</p>
+                        </details>
+
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                What statuses can a soldier have?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">Active, On Leave, Medical, Deployed, Retired, and Inactive.
+                                Different statuses affect duty eligibility.</p>
+                        </details>
+
+                        <details
+                            class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
+                            <summary class="font-semibold text-slate-900 flex items-center justify-between">
+                                Can I deactivate a soldier?
+                                <i class="fas fa-chevron-down text-slate-400"></i>
+                            </summary>
+                            <p class="text-slate-600 mt-4">Yes, set status to Retired or Inactive. This prevents them
+                                from
+                                being assigned to duties automatically.</p>
+                        </details>
+                    </div>
+                </section>
+
+                <footer class="border-t border-slate-200 pt-12 mt-16">
+                    <div class="flex justify-between items-center mb-8">
+                        <a href="duty-management.html"
+                            class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2">
+                            <i class="fas fa-arrow-left"></i> Previous: Duty Management
+                        </a>
+                        <a href="absence-management.html"
+                            class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2">
+                            Next: Absence Mgmt <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm text-slate-500">Last Updated: March 12, 2026</p>
+                </footer>
             </div>
-            </section>
-
-            <!-- Screenshot Placeholder -->
-            <section id="screenshots" class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-8">Visual Guide</h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div
-                        class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
-                        <div class="text-center">
-                            <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
-                            <p class="text-slate-600 font-semibold">[Screenshot: Soldier Profile Creation]</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
-                        <div class="text-center">
-                            <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
-                            <p class="text-slate-600 font-semibold">[Screenshot: Personal Information Form]</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
-                        <div class="text-center">
-                            <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
-                            <p class="text-slate-600 font-semibold">[Screenshot: Service History View]</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-12 flex items-center justify-center h-64">
-                        <div class="text-center">
-                            <i class="fas fa-image text-slate-400 text-4xl mb-4 block"></i>
-                            <p class="text-slate-600 font-semibold">[Screenshot: Soldier Export Report]</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="faq" class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-8">FAQ</h2>
-
-                <div class="space-y-4">
-                    <details
-                        class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
-                        <summary class="font-semibold text-slate-900 flex items-center justify-between">
-                            Can I edit soldier information after creation?
-                            <i class="fas fa-chevron-down text-slate-400"></i>
-                        </summary>
-                        <p class="text-slate-600 mt-4">Yes, all soldier information can be edited except unique
-                            identifiers like ID numbers.</p>
-                    </details>
-
-                    <details
-                        class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
-                        <summary class="font-semibold text-slate-900 flex items-center justify-between">
-                            What statuses can a soldier have?
-                            <i class="fas fa-chevron-down text-slate-400"></i>
-                        </summary>
-                        <p class="text-slate-600 mt-4">Active, On Leave, Medical, Deployed, Retired, and Inactive.
-                            Different statuses affect duty eligibility.</p>
-                    </details>
-
-                    <details
-                        class="bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition">
-                        <summary class="font-semibold text-slate-900 flex items-center justify-between">
-                            Can I deactivate a soldier?
-                            <i class="fas fa-chevron-down text-slate-400"></i>
-                        </summary>
-                        <p class="text-slate-600 mt-4">Yes, set status to Retired or Inactive. This prevents them from
-                            being assigned to duties automatically.</p>
-                    </details>
-                </div>
-            </section>
-
-            <footer class="border-t border-slate-200 pt-12 mt-16">
-                <div class="flex justify-between items-center mb-8">
-                    <a href="duty-management.html"
-                        class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2">
-                        <i class="fas fa-arrow-left"></i> Previous: Duty Management
-                    </a>
-                    <a href="absence-management.html"
-                        class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2">
-                        Next: Absence Mgmt <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <p class="text-sm text-slate-500">Last Updated: March 12, 2026</p>
-            </footer>
-    </div>
-    </main>
+        </main>
     </div>
 
     <script src="../script.js"></script>
